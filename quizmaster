@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>QuizMaster - Pattao National High School</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --brand-maroon: #800000;
+  --brand-gold: #D4AF37;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(180deg, #fffaf7 0%, #ffffff 100%);
+}
+</style>
+</head>
+
+<body class="p-6">
+
+<h1 class="text-2xl font-bold text-center text-red-800">
+QuizMaster
+</h1>
+
+<footer class="text-center mt-6 text-gray-500 text-sm">
+<p>© 2025 Reynaldo P. Usigan, Mylene A. Baquiran, Queen Jamel Bautista</p>
+</footer>
+
+<script>
+function resetAttempts() {
+  const passcode = prompt("Enter teacher passcode to reset attempts:");
+  if (passcode === "300480") {
+    localStorage.removeItem("quizAttempts");
+    alert("✅ Attempts counter has been reset!");
+  } else if (passcode !== null) {
+    alert("❌ Incorrect passcode.");
+  }
+}
+
+// ===== QUESTION BANK =====
+const QUESTION_BANK = [
+  {
+    id: 1,
+    q: "What does ICT stand for?",
+    options: [
+      "Information and Communication Technology",
+      "Internet and Computer Technique",
+      "Information Computer Technology",
+      "Integrated Communication Tool"
+    ],
+    answer: 0
+  },
+  {
+    id: 2,
+    q: "Which device is used to input data into a computer?",
+    options: ["Monitor", "Printer", "Keyboard", "Speaker"],
+    answer: 2
+  },
+  {
+    id: 3,
+    q: "What part of the computer is the brain?",
+    options: ["RAM", "Hard Drive", "Motherboard", "CPU"],
+    answer: 3
+  },
+  {
+    id: 4,
+    q: "Which is system software?",
+    options: ["Microsoft Word", "Windows OS", "Google Chrome", "Photoshop"],
+    answer: 1
+  },
+  {
+    id: 5,
+    q: "What does RAM stand for?",
+    options: [
+      "Read Access Memory",
+      "Random Access Memory",
+      "Run All Memory",
+      "Readable Active Memory"
+    ],
+    answer: 1
+  },
+  {
+    id: 6,
+    q: "Which device produces a hard copy?",
+    options: ["Monitor", "Printer", "Speaker", "Keyboard"],
+    answer: 1
+  },
+  {
+    id: 7,
+    q: "What device connects a computer to the internet?",
+    options: ["Modem", "Scanner", "Printer", "Flash drive"],
+    answer: 0
+  },
+  {
+    id: 8,
+    q: "What does WWW stand for?",
+    options: [
+      "World Wide Web",
+      "Wide World Web",
+      "Web World Wide",
+      "World Web Window"
+    ],
+    answer: 0
+  },
+  {
+    id: 9,
+    q: "Which is a web browser?",
+    options: ["Excel", "Google Chrome", "Windows", "Android"],
+    answer: 1
+  },
+  {
+    id: 10,
+    q: "What is the purpose of a firewall?",
+    options: [
+      "Cool the computer",
+      "Protect from unauthorized access",
+      "Speed up the computer",
+      "Store data"
+    ],
+    answer: 1
+  }
+];
+</script>
+
+</body>
+</html>
