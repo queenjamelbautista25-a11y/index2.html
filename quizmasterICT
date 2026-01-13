@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>QuizMaster - Pattao National High School</title>
+
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --brand-maroon: #800000;
+  --brand-gold: #D4AF37;
+  --card-bg: #ffffff;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(180deg, #fffaf7 0%, #ffffff 100%);
+}
+</style>
+</head>
+
+<body class="p-6">
+
+<h1 class="text-center text-3xl font-bold text-red-800 mb-4">
+  QuizMaster
+</h1>
+
+<button onclick="resetAttempts()" class="bg-red-700 text-white px-4 py-2 rounded">
+Reset Attempts (Teacher)
+</button>
+
+<footer class="text-center mt-10 text-gray-500 text-sm">
+  <p>© 2025 Reynaldo P. Usigan, Mylene A. Baquiran, Queen Jamel Bautista</p>
+</footer>
+
+<!-- ================= SCRIPT AREA ================= -->
+<script>
+/* ===== RESET ATTEMPTS ===== */
+function resetAttempts() {
+  const passcode = prompt("Enter teacher passcode to reset attempts:");
+  if (passcode === "300480") {
+    localStorage.removeItem("quizAttempts");
+    alert("✅ Attempts counter has been reset!");
+  } else if (passcode !== null) {
+    alert("❌ Incorrect passcode. Access denied.");
+  }
+}
+
+/* ===== QUESTION BANK ===== */
+const QUESTION_BANK = [
+  {
+    id: 1,
+    question: "What does ICT stand for?",
+    options: [
+      "Information and Communication Technology",
+      "Internet and Computer Technique",
+      "Information Computer Technology",
+      "Integrated Communication Tool"
+    ],
+    answer: 1
+  },
+  {
+    id: 2,
+    question: "Which device is used to input data into a computer?",
+    options: ["Monitor", "Printer", "Keyboard", "Speaker"],
+    answer: 2
+  },
+  {
+    id: 3,
+    question: "What part of the computer is considered the brain?",
+    options: ["RAM", "Hard Drive", "Motherboard", "CPU"],
+    answer: 3
+  },
+  {
+    id: 4,
+    question: "Which of the following is system software?",
+    options: ["Microsoft Word", "Windows OS", "Google Chrome", "Photoshop"],
+    answer: 1
+  },
+  {
+    id: 5,
+    question: "What does RAM stand for?",
+    options: [
+      "Read Access Memory",
+      "Random Access Memory",
+      "Run All Memory",
+      "Readable Active Memory"
+    ],
+    answer: 1
+  },
+  {
+    id: 6,
+    question: "Which device produces a hard copy?",
+    options: ["Monitor", "Printer", "Speaker", "Keyboard"],
+    answer: 1
+  },
+  {
+    id: 7,
+    question: "What device connects a computer to the internet?",
+    options: ["Modem", "Scanner", "Printer", "Flash Drive"],
+    answer: 1
+  },
+  {
+    id: 8,
+    question: "What does WWW stand for?",
+    options: [
+      "World Wide Web",
+      "Wide World Web",
+      "Web World Wide",
+      "World Web Window"
+    ],
+    answer: 1
+  },
+  {
+    id: 9,
+    question: "Which of the following is a web browser?",
+    options: ["Microsoft Excel", "Google Chrome", "Windows", "Android"],
+    answer: 1
+  },
+  {
+    id: 10,
+    question: "What is the purpose of a firewall?",
+    options: [
+      "To cool the computer",
+      "To protect against unauthorized access",
+      "To speed up the computer",
+      "To store data"
+    ],
+    answer: 1
+  }
+];
+
+console.log("Quiz Loaded Successfully", QUESTION_BANK);
+</script>
+
+</body>
+</html>
